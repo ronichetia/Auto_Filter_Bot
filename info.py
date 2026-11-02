@@ -28,11 +28,11 @@ def is_enabled(value, default: bool = False) -> bool:
 # 1. BOT CREDENTIALS & SESSION
 # ==============================================================================
 # Telegram API credentials from https://my.telegram.org
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
+API_ID = int(environ.get('API_ID', '37988924'))
+API_HASH = environ.get('API_HASH', 'fccc55f248cf1739f6cf120d3e244561')
 
 # Bot token obtained from @BotFather
-BOT_TOKEN = environ.get('BOT_TOKEN', '')
+BOT_TOKEN = environ.get('BOT_TOKEN', '8613715629:AAHUt_vYO1DIaCrs25OmOUtsfU7il3EdwJM')
 
 # Pyrogram session name
 SESSION = environ.get('SESSION', 'dreamxbotz_search')
@@ -44,23 +44,23 @@ name = str(environ.get('name', 'DREAMXBOTZ'))
 # 2. ADMINS, CHANNELS & PERMISSIONS
 # ==============================================================================
 # Telegram user IDs of bot administrators (space-separated in .env)
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '634637418').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '8699747292').split()]
 
 # Channels to auto-index files from (Bot must be an admin in these channels)
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-100').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1003734234742').split()]
 
 # Logging & Storage Channels
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-100'))            # General activity & error logs
-BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-100'))            # File storage / binary cache channel
-PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-100'))          # Premium subscription logs
-DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-100').split()]
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003992777109'))            # General activity & error logs
+BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1003992777109'))            # File storage / binary cache channel
+PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1003992777109'))          # Premium subscription logs
+DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-1003992777109').split()]
 
 # Support Group & Request Channel
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-100')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1004499747599')
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/')
 
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-100')
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1003992777109')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 
@@ -71,7 +71,7 @@ AUTH_REQ_CHANNELS = [int(ch) for ch in auth_req_channels.split() if ch and id_pa
 AUTH_CHANNELS = [int(ch) for ch in auth_channels.split() if ch and id_pattern.match(ch)]
 
 # User Access Lists
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '8699747292').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
 
@@ -85,7 +85,7 @@ UPDATE_CHNL_LNK = environ.get('UPDATE_CHNL_LNK', 'https://t.me/dreamxbotz')
 # 3. DATABASE CONFIGURATION (MongoDB)
 # ==============================================================================
 # Primary MongoDB Connection URI & Database details
-DATABASE_URI = environ.get('DATABASE_URI', '')
+DATABASE_URI = environ.get('DATABASE_URI', 'mongodb+srv://VishnuJs:sfphtBLg@cluster0.lku9w7d.mongodb.net/?appName=Cluster0')
 DATABASE_NAME = environ.get('DATABASE_NAME', 'Cluster0')
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'dreamcinezone_files')
 
@@ -136,7 +136,7 @@ BUTTON_MODE = is_enabled(environ.get('BUTTON_MODE', "False"), False)
 P_TTI_SHOW_OFF = is_enabled(environ.get('P_TTI_SHOW_OFF', "False"), False)
 MAX_BTN = is_enabled(environ.get('MAX_BTN', "True"), True)
 NO_RESULTS_MSG = is_enabled(environ.get("NO_RESULTS_MSG", "True"), True)
-SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
+SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "False"), False)
 MELCOW_NEW_USERS = is_enabled(environ.get('MELCOW_NEW_USERS', "False"), False)
 ULTRA_FAST_MODE = is_enabled(environ.get('ULTRA_FAST_MODE'), False)
 MAINTENANCE = is_enabled(environ.get('MAINTENANCE', "False"), False)
@@ -148,7 +148,7 @@ IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", f"{script.IMDB_TEMPLATE_TXT}")
 MSG_ALRT = environ.get('MSG_ALRT', 'Share & Support Us ♥️')
 
 # IMDB Settings
-IMDB = is_enabled(environ.get('IMDB', "True"), False)
+IMDB = is_enabled(environ.get('IMDB', "False"), False)
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 
 # Languages & Media Qualities Seasons
@@ -188,9 +188,9 @@ ABOVE_PREVIEW = is_enabled(environ.get('ABOVE_PREVIEW', "True"), True)
 
 # The Movie Database (TMDB) API Key
 TMDB_API_KEY = environ.get('TMDB_API_KEY', '')
-TMDB_POSTER = is_enabled(environ.get('TMDB_POSTER', "True"), True)
+TMDB_POSTER = is_enabled(environ.get('TMDB_POSTER', "False"), False)
 TMDB_ON_SEARCH = is_enabled(environ.get('TMDB_ON_SEARCH', "False"), False)
-LANDSCAPE_POSTER = is_enabled(environ.get('LANDSCAPE_POSTER', "True"), True)
+LANDSCAPE_POSTER = is_enabled(environ.get('LANDSCAPE_POSTER', "False"), False)
 
 
 # ==============================================================================
